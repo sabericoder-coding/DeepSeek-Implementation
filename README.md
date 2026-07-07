@@ -9,6 +9,23 @@ This repository provides a from‑scratch implementation of a character‑level 
 
 ---
 
+## 🎥 Live Demo
+
+Run the full implementation directly in your browser – no install, no GPU needed.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/YOUR_NOTEBOOK_ID)
+
+The notebook will:
+1. Download the training text automatically from this repository.
+2. Train the sparse MoE transformer on‑the‑fly.
+3. Generate a sample of 500 characters after training.
+
+You can also change the hyperparameters or upload your own dataset to experiment.
+
+
+
+
+
 ## 🏗️ Architecture Overview
 
 ```
