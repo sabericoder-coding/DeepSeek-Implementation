@@ -13,7 +13,7 @@ This repository provides a from‑scratch implementation of a character‑level 
 
 Run the full implementation directly in your browser – no install, no GPU needed.
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/YOUR_NOTEBOOK_ID)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Qc4u1hOYf3comFQiRerkqRn9EQwTcaGu)
 
 The notebook will:
 1. Download the training text automatically from this repository.
