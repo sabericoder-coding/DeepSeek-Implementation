@@ -1,6 +1,88 @@
 # DeepSeek From Scratch 
 
 
+## Features Implemented
+
+### 🧠 Core Model Architecture
+• **Sparse Mixture-of-Experts (MoE)** – with a noisy top‑k router that selects 2 experts per token from a pool of 8.
+
+• **Noisy Top‑k Gating** – adds learnable Gaussian noise to router logits to encourage load balancing.
+
+• **Multi‑Head Self‑Attention (MHSA)** – standard scaled dot‑product attention with 8 heads and causal masking.
+
+• **Pre‑Layer Normalization Transformer Blocks** – applies LayerNorm before attention and MoE, with residual connections.
+
+• **Learned Positional Embeddings** – uses a trainable embedding table for absolute position encoding (not RoPE or ALiBi).
+
+---
+
+### ⚙️ Training & Optimization
+• **Kaiming (He) Initialization** – applied to all linear layers for better training stability.
+
+• **Train / Validation Split** – 90/10 split of the input text data with periodic evaluation loss.
+
+• **Dropout Regularization** – applied in attention, expert MLPs, and final projections.
+
+• **AdamW Optimizer** – used for training with a fixed learning rate.
+
+---
+
+### 🚀 Generation, Tokenization & Hardware
+• **Character‑Level Tokenization** – custom encode/decode functions mapping characters to integers (not subword/Byte‑Pair Encoding).
+
+• **Autoregressive Text Generation** – greedy multinomial sampling to generate new tokens sequentially.
+
+• **CUDA / CPU Support** – automatically selects GPU if available (with commented TPU support using `torch_xla`).
+
+
+
+
+
+## 🧩 Your Learning Toolkit (Building Blocks)
+
+Learning LLMs doesn't have to be scary. We've organized the core components into three intuitive layers so you can explore exactly how a modern AI thinks, learns, and generates text—one piece at a time.
+
+---
+
+### 1. 🤖 The Core Engine (How the Model Thinks)
+This is the "brain" of the transformer. Instead of throwing everything at you at once, we start here so you can see exactly how data flows through the network.
+
+• **Sparse Mixture-of-Experts (MoE)** – with a noisy top‑k router that selects 2 experts per token from a pool of 8.
+
+• **Noisy Top‑k Gating** – adds learnable Gaussian noise to router logits to encourage load balancing.
+
+• **Multi‑Head Self‑Attention (MHSA)** – standard scaled dot‑product attention with 8 heads and causal masking.
+
+• **Pre‑Layer Normalization Transformer Blocks** – applies LayerNorm before attention and MoE, with residual connections.
+
+• **Learned Positional Embeddings** – uses a trainable embedding table for absolute position encoding (not RoPE or ALiBi).
+
+---
+
+### 2. 📈 The Training Loop (How It Learns)
+Now that the structure is built, this layer handles the "learning" process. These are the essential ingredients that turn random guesses into coherent text.
+
+• **Kaiming (He) Initialization** – applied to all linear layers for better training stability.
+
+• **Train / Validation Split** – 90/10 split of the input text data with periodic evaluation loss.
+
+• **Dropout Regularization** – applied in attention, expert MLPs, and final projections.
+
+• **AdamW Optimizer** – used for training with a fixed learning rate.
+
+---
+
+### 3. 🛠️ Input, Output & Hardware (Making It Work)
+Finally, this is how you actually feed data into the model, get text back out, and run it on your machine without any complex setup.
+
+• **Character‑Level Tokenization** – custom encode/decode functions mapping characters to integers (not subword/Byte‑Pair Encoding).
+
+• **Autoregressive Text Generation** – greedy multinomial sampling to generate new tokens sequentially.
+
+• **CUDA / CPU Support** – automatically selects GPU if available (with commented TPU support using `torch_xla`).
+
+
+
 
 
 **a minimal educational implementation of deepseek that only covers the absolute basics. Here is the actual feature list of code**
