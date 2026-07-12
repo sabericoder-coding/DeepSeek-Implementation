@@ -3,9 +3,39 @@
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)](https://pytorch.org)
 
-**A clean, educational PyTorch implementation of a Transformer with Sparse Mixture of Experts (MoE), inspired by the DeepSeek family of models.**
+**
+a minimal educational implementation of deepseek that only covers the absolute basics. Here is the actual feature list of code
 
-This repository provides a from‑scratch implementation of a character‑level language model that combines multi‑head self‑attention with a sparse MoE layer featuring noisy top‑k routing. It is designed to be readable, educational, and easily extensible.
+---
+
+**Features Implemented in This Repository**
+
+• **Sparse Mixture-of-Experts (MoE)** – with a noisy top‑k router that selects 2 experts per token from a pool of 8.
+
+• **Noisy Top‑k Gating** – adds learnable Gaussian noise to router logits to encourage load balancing.
+
+• **Multi‑Head Self‑Attention (MHSA)** – standard scaled dot‑product attention with 8 heads and causal masking.
+
+• **Pre‑Layer Normalization Transformer Blocks** – applies LayerNorm before attention and MoE, with residual connections.
+
+• **Learned Positional Embeddings** – uses a trainable embedding table for absolute position encoding (not RoPE or ALiBi).
+
+• **Character‑Level Tokenization** – custom encode/decode functions mapping characters to integers (not subword/Byte‑Pair Encoding).
+
+• **Kaiming (He) Initialization** – applied to all linear layers for better training stability.
+
+• **Train / Validation Split** – 90/10 split of the input text data with periodic evaluation loss.
+
+• **Autoregressive Text Generation** – greedy multinomial sampling to generate new tokens sequentially.
+
+• **Dropout Regularization** – applied in attention, expert MLPs, and final projections.
+
+• **CUDA / CPU Support** – automatically selects GPU if available (with commented TPU support using `torch_xla`).
+
+• **AdamW Optimizer** – used for training with a fixed learning rate.
+
+---
+**
 
 ---
 
