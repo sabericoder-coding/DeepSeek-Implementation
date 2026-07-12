@@ -1,5 +1,23 @@
 # DeepSeek From Scratch 
 
+## Features Implemented in This Repository
+
+| Component | Description |
+|-----------|-------------|
+| **Sparse Mixture-of-Experts (MoE)** | with a noisy top‑k router that selects 2 experts per token from a pool of 8. |
+| **Noisy Top‑k Gating** | adds learnable Gaussian noise to router logits to encourage load balancing. |
+| **Multi‑Head Self‑Attention (MHSA)** | standard scaled dot‑product attention with 8 heads and causal masking. |
+| **Pre‑Layer Normalization Transformer Blocks** | applies LayerNorm before attention and MoE, with residual connections. |
+| **Learned Positional Embeddings** | uses a trainable embedding table for absolute position encoding (not RoPE or ALiBi). |
+| **Character‑Level Tokenization** | custom encode/decode functions mapping characters to integers (not subword/Byte‑Pair Encoding). |
+| **Kaiming (He) Initialization** | applied to all linear layers for better training stability. |
+| **Train / Validation Split** | 90/10 split of the input text data with periodic evaluation loss. |
+| **Autoregressive Text Generation** | greedy multinomial sampling to generate new tokens sequentially. |
+| **Dropout Regularization** | applied in attention, expert MLPs, and final projections. |
+| **CUDA / CPU Support** | automatically selects GPU if available (with commented TPU support using `torch_xla`). |
+| **AdamW Optimizer** | used for training with a fixed learning rate. |
+
+
 ## Features Implemented
 
 Here is the actual feature list of the code:
