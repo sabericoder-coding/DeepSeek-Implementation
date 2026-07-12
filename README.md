@@ -3,7 +3,6 @@
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)](https://pytorch.org)
 
-
 **a minimal educational implementation of deepseek that only covers the absolute basics. Here is the actual feature list of code**
 
 ---
@@ -34,6 +33,7 @@
 
 • **AdamW Optimizer** – used for training with a fixed learning rate.
 
+---
 
 ## 🎥 Live Demo
 
@@ -48,13 +48,11 @@ The notebook will:
 
 You can also change the hyperparameters or upload your own dataset to experiment.
 
-
-
-
+---
 
 ## 🏗️ Architecture Overview
 
-```
+```text
 Input Tokens (idx)
         │
         ▼
@@ -90,41 +88,3 @@ Input Tokens (idx)
         │
         ▼
    Output Logits
-```
-
-### Key Components
-
-| Component | Description |
-|-----------|-------------|
-| **`NoisyTopkRouter`** | Routes each token to its top‑k experts. Adds learnable Gaussian noise to the router logits to encourage load balancing. |
-| **`SparseMoE`** | Applies the selected expert networks to each token and aggregates the weighted outputs. |
-| **`Expert`** | A simple 2‑layer MLP with ReLU activation and dropout (4× expansion factor). |
-| **`Head`** | A single head of scaled dot‑product self‑attention with causal masking. |
-| **`MultiHeadAttention`** | Parallel self‑attention heads with a final projection layer. |
-| **`Block`** | A transformer block combining attention and MoE with residual connections and layer norm. |
-| **`SparseMoELanguageModel`** | The full language model: embeddings, stacked blocks, final layer norm, and language modelling head. |
-
----
-
-## ⚙️ Hyperparameters
-
-| Parameter | Value | Description |
-|-----------|-------|-------------|
-| `batch_size` | 16 | Number of sequences processed in parallel |
-| `block_size` | 32 | Maximum context length (sequence length) |
-| `max_iters` | 50,000 | Total training iterations |
-| `eval_interval` | 100 | How often to evaluate on validation set |
-| `learning_rate` | 1e-3 | AdamW learning rate |
-| `n_embed` | 128 | Embedding dimension |
-| `n_head` | 8 | Number of self‑attention heads |
-| `n_layer` | 8 | Number of transformer blocks |
-| `dropout` | 0.1 | Dropout probability |
-| `num_experts` | 8 | Total number of experts in the MoE layer |
-| `top_k` | 2 | Number of experts activated per token |
-| `eval_iters` | 400 | Number of batches used for evaluation loss |
-
----
-
-## 🚀 Quick Start
-
-just open colab and enjoy the project
