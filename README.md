@@ -90,6 +90,6 @@ Input Tokens (idx)
         ▼
    Output Logits
 
-
+ 
 ---
-## Just enjoy the Code
+## Just run and enjoy the Code
