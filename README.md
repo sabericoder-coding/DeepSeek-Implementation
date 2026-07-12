@@ -1,10 +1,10 @@
-# DeepSeek‑Style Sparse Mixture of Experts (MoE) Implementation
+# DeepSeek From Scratch 
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)](https://pytorch.org)
 
-**
-a minimal educational implementation of deepseek that only covers the absolute basics. Here is the actual feature list of code
+
+**a minimal educational implementation of deepseek that only covers the absolute basics. Here is the actual feature list of code**
 
 ---
 
@@ -34,10 +34,6 @@ a minimal educational implementation of deepseek that only covers the absolute b
 
 • **AdamW Optimizer** – used for training with a fixed learning rate.
 
----
-**
-
----
 
 ## 🎥 Live Demo
 
